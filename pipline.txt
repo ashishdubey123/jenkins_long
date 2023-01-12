@@ -6,5 +6,10 @@ pipeline {
       echo "hello ashish "
       }
     }
+    stage('code-pull') {
+     steps {
+      git branch: 'main', credentialsId: 'ubuntu', url: 'git@github.com:ashishdubey123/student.git'
+      }
+    }
   }
 }
