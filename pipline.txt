@@ -8,14 +8,10 @@ pipeline {
     }
     stage('code-pull') {
      steps {
-      git branch: 'main', credentialsId: 'ubuntu', url: 'git@github.com:ashishdubey123/student.git'
+      git credentialsId: 'ubuntu', url: 'git@github.com:shashirajraja/onlinebookstore.git'
       }
     }
-     stage('build') {
-     steps {
-      sh 'mvn clean package'
-      }
-    }
+     
 
   }
 }
