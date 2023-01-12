@@ -19,8 +19,8 @@ pipeline {
     stage('artifact-to-s3') {
       steps {
         withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
-        sh 'aws s3 ls'
-      }
+        sh "aws s3 ls"
+        }
       }
     }
 
