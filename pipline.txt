@@ -16,6 +16,13 @@ pipeline {
       sh 'mvn clean package'
       }
     }
+    stage('artifact-to-s3') {
+      steps {
+        withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
+        sh 'aws s3 ls'
+      }
+      }
+    }
 
   }
 }
