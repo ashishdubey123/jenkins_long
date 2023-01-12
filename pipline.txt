@@ -17,10 +17,12 @@ pipeline {
       }
     }
     stage('artifact-to-s3') {
-      steps {
+      try {
         withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
         sh "aws s3 ls"
         }
+      } catch (err) {
+        sh "echo error in sending files"
       }
     }
 
